@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>activiti-5_13-5_16_2</artifactId>
-	<name>${projectNamePrefix} for Activiti 5.13 - 5.16.2</name>
-	<description>${projectNamePrefix} that supports versions 5.13 up to and including 5.16.2 of Activiti.</description>
+	<artifactId>activiti-5_12-5_16_2-integration</artifactId>
+
+	<name>${projectNamePrefix} Integration Activiti 5.12 - 5.16.2</name>
+	<description>${projectNamePrefix} integration tests for Activiti versions 5.12 - 5.16.2</description>
 
 	<parent>
 		<groupId>org.toxos.activiti.assertions</groupId>
-		<artifactId>process-assertions-parent</artifactId>
+		<artifactId>integration</artifactId>
 		<version>0.6.1-SNAPSHOT</version>
-		<relativePath>../process-assertions-parent/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<properties>
@@ -27,48 +26,24 @@
 			<url>http://maven.alfresco.com/nexus/content/groups/public</url>
 		</repository>
 	</repositories>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.activiti</groupId>
-			<artifactId>activiti-engine</artifactId>
+			<artifactId>activiti-spring</artifactId>
 			<version>${activiti.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.toxos.activiti.assertions</groupId>
+			<artifactId>activiti-5_12-5_16_2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.toxos.activiti.assertions.integration</groupId>
+			<artifactId>common-integration</artifactId>
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<dependencies>
-					<dependency>
-						<groupId>org.activiti</groupId>
-						<artifactId>activiti-engine</artifactId>
-						<version>${activiti.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-		
-		<sourceDirectory>${sourceDirectory}</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>${resourceDirectory}</directory>
-			</resource>
-		</resources>
-		<testSourceDirectory>${testSourceDirectory}</testSourceDirectory>
-		<testResources>
-			<testResource>
-				<directory>${testResourceDirectory}</directory>
-			</testResource>
-		</testResources>
-	</build>
-	
 	<profiles>
 		<profile>
 			<id>activiti-5.13</id>
@@ -113,5 +88,4 @@
 			</properties>
 		</profile>
 	</profiles>
-
 </project>

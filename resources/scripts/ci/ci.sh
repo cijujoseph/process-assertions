@@ -9,11 +9,13 @@ prelude="[CIBUILD]";
 
 echo "${prelude} Running CI build";
 
+echo "${prelude} Running default test profile for project";
+mvn clean test -DskipTests;
+
+echo "${prelude} Running test profiles for supported Activiti versions on submodules";
+
+source $(dirname $0)/ci-activiti-5_12-5_12_1.sh;
 source $(dirname $0)/ci-activiti-5_12-5_16_2.sh;
 source $(dirname $0)/ci-activiti-5_16_3-5_x.sh;
-
-echo "${prelude} Running default test profile for project";
-
-mvn clean test;
 
 echo "${prelude} Completed CI build";

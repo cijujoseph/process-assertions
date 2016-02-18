@@ -44,6 +44,7 @@
 		<projectNamePrefix>Process Assertions</projectNamePrefix>
 
 		<!-- Plugins -->
+		<build.helper.plugin.version>1.10</build.helper.plugin.version>
 		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
 		<maven.javadoc.plugin.version>2.9.1</maven.javadoc.plugin.version>
 		<maven.release.plugin.version>2.4.2</maven.release.plugin.version>
@@ -62,11 +63,26 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.activiti</groupId>
-				<artifactId>activiti-engine</artifactId>
-				<version>${activiti.version}</version>
-				<scope>provided</scope>
+				<groupId>org.toxos.activiti.assertions</groupId>
+				<artifactId>activiti-5_12-5_12_1</artifactId>
+				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.toxos.activiti.assertions</groupId>
+				<artifactId>activiti-5_12-5_16_2</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.toxos.activiti.assertions</groupId>
+				<artifactId>activiti-5_16_3-5_x</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.toxos.activiti.assertions.integration</groupId>
+				<artifactId>common-integration</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
@@ -133,10 +149,6 @@
 			<artifactId>hamcrest-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.activiti</groupId>
-			<artifactId>activiti-engine</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
@@ -190,6 +202,27 @@
 						<target>${jdk.version}</target>
 						<encoding>${project.build.sourceEncoding}</encoding>
 					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>${build.helper.plugin.version}</version>
+					<executions>
+						<execution>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>add-source</goal>
+							</goals>
+							<configuration>
+								<sources>
+									<source>${sourceDirectory}</source>
+								</sources>
+								<test-sources>
+									<source>${testSourceDirectory}</source>
+								</test-sources>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>

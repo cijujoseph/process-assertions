@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>activiti-5_12-5_12_1-integration</artifactId>
+
+	<name>${projectNamePrefix} Integration Activiti 5.12 - 5.12.1</name>
+	<description>${projectNamePrefix} integration tests for Activiti versions 5.12 - 5.12.1</description>
+
+	<parent>
+		<groupId>org.toxos.activiti.assertions</groupId>
+		<artifactId>integration</artifactId>
+		<version>0.6.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<properties>
+		<activiti.version>5.12.1</activiti.version>
+	</properties>
+	
+	<!-- Repositories are required because Activiti framework is only listed 
+		in Central from 5.14 upwards. -->
+	<repositories>
+		<repository>
+			<id>Activiti</id>
+			<url>http://maven.alfresco.com/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<version>${activiti.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.toxos.activiti.assertions</groupId>
+			<artifactId>activiti-5_12-5_12_1</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.toxos.activiti.assertions.integration</groupId>
+			<artifactId>common-integration</artifactId>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>activiti-5.12</id>
+			<properties>
+				<activiti.version>5.12</activiti.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>activiti-5.12.1</id>
+			<properties>
+				<activiti.version>5.12.1</activiti.version>
+			</properties>
+		</profile>
+	</profiles>
+</project>

@@ -4,9 +4,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>activiti-5_13-5_16_2</artifactId>
-	<name>${projectNamePrefix} for Activiti 5.13 - 5.16.2</name>
-	<description>${projectNamePrefix} that supports versions 5.13 up to and including 5.16.2 of Activiti.</description>
+	<artifactId>activiti-5_12-5_12_1</artifactId>
+	<name>${projectNamePrefix} for Activiti 5.12 - 5.12.1</name>
+	<description>${projectNamePrefix} that supports versions 5.12 up to and including 5.12.1 of Activiti.</description>
 
 	<parent>
 		<groupId>org.toxos.activiti.assertions</groupId>
@@ -16,7 +16,7 @@
 	</parent>
 
 	<properties>
-		<activiti.version>5.16.2</activiti.version>
+		<activiti.version>5.12.1</activiti.version>
 	</properties>
 	
 	<!-- Repositories are required because Activiti framework is only listed 
@@ -71,45 +71,15 @@
 	
 	<profiles>
 		<profile>
-			<id>activiti-5.13</id>
+			<id>activiti-5.12</id>
 			<properties>
-				<activiti.version>5.13</activiti.version>
+				<activiti.version>5.12</activiti.version>
 			</properties>
 		</profile>
 		<profile>
-			<id>activiti-5.14</id>
+			<id>activiti-5.12.1</id>
 			<properties>
-				<activiti.version>5.14</activiti.version>
-			</properties>
-		</profile>
-		<profile>
-			<id>activiti-5.15</id>
-			<properties>
-				<activiti.version>5.15</activiti.version>
-			</properties>
-		</profile>
-		<profile>
-			<id>activiti-5.15.1</id>
-			<properties>
-				<activiti.version>5.15.1</activiti.version>
-			</properties>
-		</profile>
-		<profile>
-			<id>activiti-5.16</id>
-			<properties>
-				<activiti.version>5.16</activiti.version>
-			</properties>
-		</profile>
-		<profile>
-			<id>activiti-5.16.1</id>
-			<properties>
-				<activiti.version>5.16.1</activiti.version>
-			</properties>
-		</profile>
-		<profile>
-			<id>activiti-5.16.2</id>
-			<properties>
-				<activiti.version>5.16.2</activiti.version>
+				<activiti.version>5.12.1</activiti.version>
 			</properties>
 		</profile>
 	</profiles>

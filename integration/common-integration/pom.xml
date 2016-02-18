@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.toxos.activiti.assertions.integration</groupId>
+	<artifactId>common-integration</artifactId>
+	
+	<name>${projectNamePrefix} Common Integration</name>
+	<description>${projectNamePrefix} common configuration for integration tests</description>
+
+	<parent>
+		<groupId>org.toxos.activiti.assertions</groupId>
+		<artifactId>process-assertions-parent</artifactId>
+		<version>0.6.1-SNAPSHOT</version>
+		<relativePath>../process-assertions-parent/pom.xml</relativePath>
+	</parent>
+	
+
+	<dependencies>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Required for Spring < 3.2.0 -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.2.0</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>

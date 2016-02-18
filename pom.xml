@@ -45,8 +45,10 @@
 	<modules>
 		<module>process-assertions-parent</module>
 		<module>source</module>
-		<module>activiti-5_12-5_16_2</module>
+		<module>activiti-5_12-5_12_1</module>
+		<module>activiti-5_13-5_16_2</module>
 		<module>activiti-5_16_3-5_x</module>
+		<module>integration</module>
 	</modules>
 
 </project>

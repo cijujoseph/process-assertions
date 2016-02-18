@@ -1,8 +1,8 @@
 echo "${prelude} Running test profiles";
 
-activitiVersions=("5.13" "5.14" "5.15" "5.15.1" "5.16" "5.16.1" "5.16.2")
+activitiVersions=("5.12" "5.12.1")
 
-moduleName="activiti-5_12-5_16_2"
+moduleName="activiti-5_12-5_12_1"
 moduleIntegrationSuffix="integration"
 
 echo "${prelude} Supported Activiti versions:";

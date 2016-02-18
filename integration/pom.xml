@@ -4,8 +4,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>source</artifactId>
-	<name>${projectNamePrefix} Source</name>
+	<artifactId>integration</artifactId>
+	<name>${projectNamePrefix} Integration Tests</name>
+	<description>${projectNamePrefix} integration tests</description>
 
 	<parent>
 		<groupId>org.toxos.activiti.assertions</groupId>
@@ -14,14 +15,24 @@
 		<relativePath>../process-assertions-parent/pom.xml</relativePath>
 	</parent>
 
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>common-integration</module>
+		<module>activiti-5_12-5_12_1-integration</module>
+		<module>activiti-5_12-5_16_2-integration</module>
+		<module>activiti-5_16_3-5_x-integration</module>
+	</modules>
+	
 	<dependencies>
 		<dependency>
-			<groupId>org.activiti</groupId>
-			<artifactId>activiti-engine</artifactId>
-			<version>${activiti.version}</version>
+			<groupId>org.toxos.activiti.assertions</groupId>
+			<artifactId>source</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -34,5 +45,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
